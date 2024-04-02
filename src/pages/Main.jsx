@@ -19,7 +19,7 @@ export class Main extends Component {
           className='container d-flex justify-content-start flex-wrap'
         >
           {
-            products.map(function(product) {
+            products.map(product => {
               if (product.category === 'wired headphones') {
                 return <Product product={product} key={product.id}/>
               }
@@ -39,7 +39,7 @@ export class Main extends Component {
           className='container d-flex justify-content-start flex-wrap'
         >
           {
-            products.map(function(product) {
+            products.map(product => {
               if (product.category === 'wireless headphones') {
                 return <Product product={product} key={product.id}/>
               }

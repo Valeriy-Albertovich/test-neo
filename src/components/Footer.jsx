@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button, Container, Navbar } from 'react-bootstrap'
+import * as Icon from 'react-bootstrap-icons';
 
 export default function Footer() {
   return (
@@ -19,16 +20,16 @@ export default function Footer() {
           <div className='d-flex flex-column'>
             <Navbar.Brand>Условия сервиса</Navbar.Brand>
             <div>
-              <Navbar.Brand>&#129505;</Navbar.Brand>
-              <Navbar.Brand>&#129505;</Navbar.Brand>
-              <Navbar.Brand>&#129505;</Navbar.Brand>
+              <Navbar.Brand><Icon.Globe/></Navbar.Brand>
+              <Navbar.Brand>Рус</Navbar.Brand>
+              <Navbar.Brand>Eng</Navbar.Brand>
             </div>
           </div>
 
           <div>
-            <Navbar.Brand>&#129505;</Navbar.Brand>
-            <Navbar.Brand>&#129505;</Navbar.Brand>
-            <Navbar.Brand>&#129505;</Navbar.Brand>
+            <Navbar.Brand><Icon.Github/></Navbar.Brand>
+            <Navbar.Brand><Icon.Telegram/></Navbar.Brand>
+            <Navbar.Brand><Icon.Whatsapp/></Navbar.Brand>
           </div>
         </Container>
       </Navbar>

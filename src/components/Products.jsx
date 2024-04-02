@@ -1,31 +1,32 @@
 import { Button, Image } from "react-bootstrap";
 import useCart from '../hooks/storage';
+import { addToCart } from '../data/cart'
 
 export function Product(props) {
 
-  const { cart } = useCart() //вынести в отдельный файл
-  console.log(cart);
+  // const { cart } = useCart() //вынести в отдельный файл
+  // console.log(cart);
 
-  const addToCart = (newId) => {
+  // const addToCart = (newId) => {
 
-    let isNewStuff = true
+  //   let isNewStuff = true
 
-    for (let id of cart.keys()) {
-      if (newId == id) {
-        isNewStuff = false
-      }
-    }
+  //   for (let id of cart.keys()) {
+  //     if (newId == id) {
+  //       isNewStuff = false
+  //     }
+  //   }
 
-    if (isNewStuff) {
-      useCart.setState((prev) => ({
-        cart: new Map(prev.cart).set(newId, 1)
-      }))
-    } else {
-      useCart.setState((prev) => ({
-        cart: new Map(prev.cart).set(newId, prev.cart.get(newId) + 1)
-      }))     
-    }
-  }
+  //   if (isNewStuff) {
+  //     useCart.setState((prev) => ({
+  //       cart: new Map(prev.cart).set(newId, 1)
+  //     }))
+  //   } else {
+  //     useCart.setState((prev) => ({
+  //       cart: new Map(prev.cart).set(newId, prev.cart.get(newId) + 1)
+  //     }))     
+  //   }
+  // }
 
 
   return(
