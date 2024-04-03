@@ -1,8 +1,10 @@
-import { Button, Image } from "react-bootstrap";
+import { Image } from "react-bootstrap";
 import * as Icon from 'react-bootstrap-icons';
+import { incrementProduct, decrementProduct, deleteProduct } from '../data/cart'
+import { useStore } from "../hooks/storage";
 
 export function ProductCart(props) {
-
+  const { setCount, setPrice } = useStore()
   return(
     <div 
       style={{ width: '25rem', height: '12rem', backgroundColor: 'white'}} 
@@ -14,9 +16,9 @@ export function ProductCart(props) {
           src={props.product.image} rounded 
         />
         <div className="d-flex justify-content-between">
-          <span><Icon.DashCircleFill/></span>
+          <span style={{cursor: 'pointer'}} onClick={() => {decrementProduct(props.product.id); setCount(); setPrice()}}><Icon.DashCircleFill/></span>
           <span>{props.count}</span>
-          <span><Icon.PlusCircleFill/></span>
+          <span style={{cursor: 'pointer'}} onClick={() => {incrementProduct(props.product.id); setCount(); setPrice()}}><Icon.PlusCircleFill/></span>
         </div>
       </div>
       <div className="d-flex flex-column justify-content-center">
@@ -25,7 +27,7 @@ export function ProductCart(props) {
 
       </div>
       <div className="d-flex flex-column align-items-end justify-content-between">
-        <a><Icon.Trash/></a>
+      <span style={{cursor: 'pointer'}} onClick={() => {deleteProduct(props.product.id); setCount(); setPrice()}}><Icon.Trash/></span>
         <span>{props.product.price * props.count} &#8381;</span>
       </div>
     </div>

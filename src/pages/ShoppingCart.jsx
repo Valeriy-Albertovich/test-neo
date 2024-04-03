@@ -1,13 +1,12 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { products } from '../data/products'
 import { ProductCart } from '../components/ProductCart'
 import { getCart } from '../data/cart'
-
+import { useStore } from "../hooks/storage";
 
 export default function ShoppingCart() {
-
+  const { price } = useStore()
   const cart = getCart()
-  console.log(cart);
   return (
     <div 
       style={{flex: '1 1 auto'}}
@@ -19,8 +18,7 @@ export default function ShoppingCart() {
       >
         {
           cart.map(product => {
-            console.log(product.id);
-              return <ProductCart product={products[product.id-1]} count={product.count} key={product.id}/>
+            return <ProductCart product={products[product.id-1]} count={product.count} key={product.id}/>
           })
         }
       </div>
@@ -37,7 +35,7 @@ export default function ShoppingCart() {
             style={{fontWeight: 'bold'}}
           >
             <span>ИТОГО</span>
-            <span>13 &#8381;</span>
+            <span>{price} &#8381;</span>
           </div>
 
           <div 

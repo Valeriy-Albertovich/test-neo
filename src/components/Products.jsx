@@ -1,33 +1,9 @@
 import { Button, Image } from "react-bootstrap";
-import useCart from '../hooks/storage';
 import { addToCart } from '../data/cart'
+import { useStore } from "../hooks/storage";
 
 export function Product(props) {
-
-  // const { cart } = useCart() //вынести в отдельный файл
-  // console.log(cart);
-
-  // const addToCart = (newId) => {
-
-  //   let isNewStuff = true
-
-  //   for (let id of cart.keys()) {
-  //     if (newId == id) {
-  //       isNewStuff = false
-  //     }
-  //   }
-
-  //   if (isNewStuff) {
-  //     useCart.setState((prev) => ({
-  //       cart: new Map(prev.cart).set(newId, 1)
-  //     }))
-  //   } else {
-  //     useCart.setState((prev) => ({
-  //       cart: new Map(prev.cart).set(newId, prev.cart.get(newId) + 1)
-  //     }))     
-  //   }
-  // }
-
+  const { setCount } = useStore()
 
   return(
     <div 
@@ -48,7 +24,7 @@ export function Product(props) {
       </div>
       <div className="d-flex justify-content-between">
         <span>&#11088; {props.product.rating}</span>
-        <Button variant="outline-secondary" class="border-0" onClick={() => addToCart(props.product.id)}>Купить</Button>
+        <Button variant="outline-secondary" class="border-0" onClick={() => {addToCart(props.product.id); setCount()}}>Купить</Button>
       </div>
     </div>
   )

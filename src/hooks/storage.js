@@ -1,5 +1,9 @@
 import { create } from 'zustand'
+import { getProductsCount, getProductsPrice } from '../data/cart'
 
-const useCart = create(() => ({ cart: new Map() }))
-
-export default useCart
+export const useStore = create((set) => ({
+  count: getProductsCount(),
+  price: getProductsPrice(),
+  setCount: () => set(() => ({count: getProductsCount()})),
+  setPrice: () => set(() => ({price: getProductsPrice()})),
+}))

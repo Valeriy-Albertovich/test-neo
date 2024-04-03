@@ -1,28 +1,28 @@
 import React from 'react'
-import { Button, Container, Navbar } from 'react-bootstrap'
+import { Container, Navbar } from 'react-bootstrap'
 import * as Icon from 'react-bootstrap-icons';
 
 export default function Footer() {
   return (
-    <footer>
+    <footer className=''>
       <Navbar className="bg-body-tertiary border rounded-top-4">
         <Container>
           <div>
-            <Navbar.Brand>QPICK</Navbar.Brand>
+            <Navbar.Brand href="/" style={{fontWeight: 'bold'}}>QPICK</Navbar.Brand>
           </div>
 
           <div className='d-flex flex-column'>
-            <Navbar.Brand>Избранное</Navbar.Brand>
-            <Navbar.Brand>Корзина</Navbar.Brand>
-            <Navbar.Brand>Контакты</Navbar.Brand>
+            <Navbar.Brand style={{fontSize: '1em'}}>Избранное</Navbar.Brand>
+            <Navbar.Brand style={{fontSize: '1em'}}>Корзина</Navbar.Brand>
+            <Navbar.Brand style={{fontSize: '1em'}}>Контакты</Navbar.Brand>
           </div>
 
-          <div className='d-flex flex-column'>
-            <Navbar.Brand>Условия сервиса</Navbar.Brand>
+          <div className='d-flex flex-column align-items-center'>
+            <Navbar.Brand style={{fontSize: '1em'}}>Условия сервиса</Navbar.Brand>
             <div>
               <Navbar.Brand><Icon.Globe/></Navbar.Brand>
-              <Navbar.Brand>Рус</Navbar.Brand>
-              <Navbar.Brand>Eng</Navbar.Brand>
+              <Navbar.Brand style={{fontSize: '1em'}}>Рус</Navbar.Brand>
+              <Navbar.Brand style={{fontSize: '1em'}}>Eng</Navbar.Brand>
             </div>
           </div>
 
